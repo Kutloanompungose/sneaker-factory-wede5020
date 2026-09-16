@@ -1,0 +1,2144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sneaker Factory | Step Into Your Style</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+
+    <!-- ==========================
+         NAVIGATION
+    =========================== -->
+
+    <header>
+
+        <div class="container navbar">
+
+            <div class="logo">
+                SNEAKER <span>FACTORY</span>
+            </div>
+
+            <nav>
+                <ul class="nav-links">
+
+                    <li>
+                        <a href="#home">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="#shop">Shop</a>
+                    </li>
+
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+
+                    <li>
+                        <a href="#releases">New Releases</a>
+                    </li>
+
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+
+                <button class="theme-toggle" onclick="toggleDarkMode()" aria-label="Toggle dark mode">
+                    <span id="themeLabel">Dark</span>
+                </button>
+
+                <button class="icon-btn" id="accountBtn" onclick="handleAccountClick()">
+                    <span id="accountLabel">Login</span>
+                </button>
+
+                <button class="icon-btn" onclick="openWishlistPanel()" aria-label="View wishlist">
+                    ♥ (<span id="wishlist-count">0</span>)
+                </button>
+
+                <button class="cart-button" onclick="openCart()">
+                    Cart (<span id="cart-count">0</span>)
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==========================
+         HERO
+    =========================== -->
+
+    <section class="hero" id="home">
+
+        <div class="container">
+
+            <div class="hero-content">
+
+                <h1>
+                    STEP INTO
+                    <span>YOUR STYLE.</span>
+                </h1>
+
+                <p>
+                    Discover the latest sneakers, exclusive releases
+                    and streetwear styles at Sneaker Factory.
+                </p>
+
+                <a href="#shop" class="btn">
+                    SHOP NOW
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================
+         SHOP
+    =========================== -->
+
+    <section id="shop">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Shop Sneakers</h2>
+
+                <p>
+                    Find your perfect pair from our latest collection.
+                </p>
+
+            </div>
+
+
+            <!-- SEARCH -->
+
+            <div class="shop-controls">
+
+                <div class="search-box">
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search sneakers..."
+                        onkeyup="searchProducts()"
+                    >
+
+                </div>
+
+
+                <!-- FILTER BUTTONS -->
+
+                <div class="filter-buttons">
+
+                    <button
+                        class="filter-btn active"
+                        onclick="filterProducts('all', this)"
+                    >
+                        All
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        onclick="filterProducts('running', this)"
+                    >
+                        Running
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        onclick="filterProducts('lifestyle', this)"
+                    >
+                        Lifestyle
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        onclick="filterProducts('basketball', this)"
+                    >
+                        Basketball
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCTS -->
+
+            <div class="product-grid" id="productGrid">
+
+
+                <!-- PRODUCT 1 -->
+
+                <div
+                    class="product-card"
+                    data-category="running"
+                    data-name="Velocity Runner"
+                >
+
+                    <div class="product-image">
+
+                        <button class="wishlist-btn" onclick="toggleWishlist(this)" aria-label="Add to wishlist">
+                            ♥
+                        </button>
+
+                        <span class="badge">
+                            NEW
+                        </span>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80"
+                            alt="Velocity Runner sneakers"
+                        >
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>Velocity Runner</h3>
+
+                        <p class="product-category">
+                            Running
+                        </p>
+
+                        <div class="price">
+                            R1,499
+                        </div>
+
+                        <div class="product-options">
+
+                            <div class="option-group">
+                                <label>Size (UK)</label>
+                                <select class="size-select">
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7" selected>7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                </select>
+                            </div>
+
+                            <div class="option-group">
+                                <label>Colour</label>
+                                <div class="color-swatches">
+                                    <button type="button" class="color-swatch black selected" data-color="Black" onclick="selectColor(this)" aria-label="Black"></button>
+                                    <button type="button" class="color-swatch white" data-color="White" onclick="selectColor(this)" aria-label="White"></button>
+                                    <button type="button" class="color-swatch red" data-color="Red" onclick="selectColor(this)" aria-label="Red"></button>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                        <button
+                            class="add-cart"
+                            onclick="addToCartFromCard(this)"
+                        >
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCT 2 -->
+
+                <div
+                    class="product-card"
+                    data-category="lifestyle"
+                    data-name="Street Classic"
+                >
+
+                    <div class="product-image">
+
+                        <button class="wishlist-btn" onclick="toggleWishlist(this)" aria-label="Add to wishlist">
+                            ♥
+                        </button>
+
+                        <span class="badge">
+                            POPULAR
+                        </span>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1543508282-6319a3e2621f?auto=format&fit=crop&w=800&q=80"
+                            alt="Street Classic sneakers"
+                        >
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>Street Classic</h3>
+
+                        <p class="product-category">
+                            Lifestyle
+                        </p>
+
+                        <div class="price">
+                            R1,799
+                        </div>
+
+                        <div class="product-options">
+
+                            <div class="option-group">
+                                <label>Size (UK)</label>
+                                <select class="size-select">
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7" selected>7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                </select>
+                            </div>
+
+                            <div class="option-group">
+                                <label>Colour</label>
+                                <div class="color-swatches">
+                                    <button type="button" class="color-swatch black selected" data-color="Black" onclick="selectColor(this)" aria-label="Black"></button>
+                                    <button type="button" class="color-swatch white" data-color="White" onclick="selectColor(this)" aria-label="White"></button>
+                                    <button type="button" class="color-swatch red" data-color="Red" onclick="selectColor(this)" aria-label="Red"></button>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                        <button
+                            class="add-cart"
+                            onclick="addToCartFromCard(this)"
+                        >
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCT 3 -->
+
+                <div
+                    class="product-card"
+                    data-category="basketball"
+                    data-name="Court Pro"
+                >
+
+                    <div class="product-image">
+
+                        <button class="wishlist-btn" onclick="toggleWishlist(this)" aria-label="Add to wishlist">
+                            ♥
+                        </button>
+
+                        <span class="badge">
+                            NEW
+                        </span>
+
+                        <img
+                            src="court-pro.jpg"
+                            alt="Court Pro basketball sneakers"
+                        >
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>Court Pro</h3>
+
+                        <p class="product-category">
+                            Basketball
+                        </p>
+
+                        <div class="price">
+                            R2,199
+                        </div>
+
+                        <div class="product-options">
+
+                            <div class="option-group">
+                                <label>Size (UK)</label>
+                                <select class="size-select">
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7" selected>7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                </select>
+                            </div>
+
+                            <div class="option-group">
+                                <label>Colour</label>
+                                <div class="color-swatches">
+                                    <button type="button" class="color-swatch black selected" data-color="Black" onclick="selectColor(this)" aria-label="Black"></button>
+                                    <button type="button" class="color-swatch white" data-color="White" onclick="selectColor(this)" aria-label="White"></button>
+                                    <button type="button" class="color-swatch red" data-color="Red" onclick="selectColor(this)" aria-label="Red"></button>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                        <button
+                            class="add-cart"
+                            onclick="addToCartFromCard(this)"
+                        >
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCT 4 -->
+
+                <div
+                    class="product-card"
+                    data-category="lifestyle"
+                    data-name="Urban Flex"
+                >
+
+                    <div class="product-image">
+
+                        <button class="wishlist-btn" onclick="toggleWishlist(this)" aria-label="Add to wishlist">
+                            ♥
+                        </button>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=800&q=80"
+                            alt="Urban Flex sneakers"
+                        >
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>Urban Flex</h3>
+
+                        <p class="product-category">
+                            Lifestyle
+                        </p>
+
+                        <div class="price">
+                            R1,599
+                        </div>
+
+                        <div class="product-options">
+
+                            <div class="option-group">
+                                <label>Size (UK)</label>
+                                <select class="size-select">
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7" selected>7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                </select>
+                            </div>
+
+                            <div class="option-group">
+                                <label>Colour</label>
+                                <div class="color-swatches">
+                                    <button type="button" class="color-swatch black selected" data-color="Black" onclick="selectColor(this)" aria-label="Black"></button>
+                                    <button type="button" class="color-swatch white" data-color="White" onclick="selectColor(this)" aria-label="White"></button>
+                                    <button type="button" class="color-swatch red" data-color="Red" onclick="selectColor(this)" aria-label="Red"></button>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                        <button
+                            class="add-cart"
+                            onclick="addToCartFromCard(this)"
+                        >
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCT 5 -->
+
+                <div
+                    class="product-card"
+                    data-category="running"
+                    data-name="Air Sprint"
+                >
+
+                    <div class="product-image">
+
+                        <button class="wishlist-btn" onclick="toggleWishlist(this)" aria-label="Add to wishlist">
+                            ♥
+                        </button>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=800&q=80"
+                            alt="Air Sprint running shoes"
+                        >
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>Air Sprint</h3>
+
+                        <p class="product-category">
+                            Running
+                        </p>
+
+                        <div class="price">
+                            R1,899
+                        </div>
+
+                        <div class="product-options">
+
+                            <div class="option-group">
+                                <label>Size (UK)</label>
+                                <select class="size-select">
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7" selected>7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                </select>
+                            </div>
+
+                            <div class="option-group">
+                                <label>Colour</label>
+                                <div class="color-swatches">
+                                    <button type="button" class="color-swatch black selected" data-color="Black" onclick="selectColor(this)" aria-label="Black"></button>
+                                    <button type="button" class="color-swatch white" data-color="White" onclick="selectColor(this)" aria-label="White"></button>
+                                    <button type="button" class="color-swatch red" data-color="Red" onclick="selectColor(this)" aria-label="Red"></button>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                        <button
+                            class="add-cart"
+                            onclick="addToCartFromCard(this)"
+                        >
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCT 6 -->
+
+                <div
+                    class="product-card"
+                    data-category="basketball"
+                    data-name="Dunk Elite"
+                >
+
+                    <div class="product-image">
+
+                        <button class="wishlist-btn" onclick="toggleWishlist(this)" aria-label="Add to wishlist">
+                            ♥
+                        </button>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1512374382149-233c42b6a83b?auto=format&fit=crop&w=800&q=80"
+                            alt="Dunk Elite basketball shoes"
+                        >
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>Dunk Elite</h3>
+
+                        <p class="product-category">
+                            Basketball
+                        </p>
+
+                        <div class="price">
+                            R2,499
+                        </div>
+
+                        <div class="product-options">
+
+                            <div class="option-group">
+                                <label>Size (UK)</label>
+                                <select class="size-select">
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7" selected>7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                </select>
+                            </div>
+
+                            <div class="option-group">
+                                <label>Colour</label>
+                                <div class="color-swatches">
+                                    <button type="button" class="color-swatch black selected" data-color="Black" onclick="selectColor(this)" aria-label="Black"></button>
+                                    <button type="button" class="color-swatch white" data-color="White" onclick="selectColor(this)" aria-label="White"></button>
+                                    <button type="button" class="color-swatch red" data-color="Red" onclick="selectColor(this)" aria-label="Red"></button>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                        <button
+                            class="add-cart"
+                            onclick="addToCartFromCard(this)"
+                        >
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCT 7 -->
+
+                <div
+                    class="product-card"
+                    data-category="lifestyle"
+                    data-name="Retro Wave"
+                >
+
+                    <div class="product-image">
+
+                        <button class="wishlist-btn" onclick="toggleWishlist(this)" aria-label="Add to wishlist">
+                            ♥
+                        </button>
+
+                        <span class="badge">
+                            SALE
+                        </span>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=800&q=80"
+                            alt="Retro Wave sneakers"
+                        >
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>Retro Wave</h3>
+
+                        <p class="product-category">
+                            Lifestyle
+                        </p>
+
+                        <div class="price">
+                            R1,299
+                        </div>
+
+                        <div class="product-options">
+
+                            <div class="option-group">
+                                <label>Size (UK)</label>
+                                <select class="size-select">
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7" selected>7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                </select>
+                            </div>
+
+                            <div class="option-group">
+                                <label>Colour</label>
+                                <div class="color-swatches">
+                                    <button type="button" class="color-swatch black selected" data-color="Black" onclick="selectColor(this)" aria-label="Black"></button>
+                                    <button type="button" class="color-swatch white" data-color="White" onclick="selectColor(this)" aria-label="White"></button>
+                                    <button type="button" class="color-swatch red" data-color="Red" onclick="selectColor(this)" aria-label="Red"></button>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                        <button
+                            class="add-cart"
+                            onclick="addToCartFromCard(this)"
+                        >
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCT 8 -->
+
+                <div
+                    class="product-card"
+                    data-category="running"
+                    data-name="Speed Max"
+                >
+
+                    <div class="product-image">
+
+                        <button class="wishlist-btn" onclick="toggleWishlist(this)" aria-label="Add to wishlist">
+                            ♥
+                        </button>
+
+                        <span class="badge">
+                            NEW
+                        </span>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=800&q=80"
+                            alt="Speed Max sneakers"
+                        >
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>Speed Max</h3>
+
+                        <p class="product-category">
+                            Running
+                        </p>
+
+                        <div class="price">
+                            R1,999
+                        </div>
+
+                        <div class="product-options">
+
+                            <div class="option-group">
+                                <label>Size (UK)</label>
+                                <select class="size-select">
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7" selected>7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                </select>
+                            </div>
+
+                            <div class="option-group">
+                                <label>Colour</label>
+                                <div class="color-swatches">
+                                    <button type="button" class="color-swatch black selected" data-color="Black" onclick="selectColor(this)" aria-label="Black"></button>
+                                    <button type="button" class="color-swatch white" data-color="White" onclick="selectColor(this)" aria-label="White"></button>
+                                    <button type="button" class="color-swatch red" data-color="Red" onclick="selectColor(this)" aria-label="Red"></button>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                        <button
+                            class="add-cart"
+                            onclick="addToCartFromCard(this)"
+                        >
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================
+         ABOUT
+    =========================== -->
+
+    <section class="about" id="about">
+
+        <div class="container about-content">
+
+            <div class="about-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=1000&q=80"
+                    alt="Sneaker collection"
+                >
+
+            </div>
+
+
+            <div class="about-text">
+
+                <h2>About Sneaker Factory</h2>
+
+                <p>
+                    Sneaker Factory is a modern sneaker retailer created
+                    for people who believe that sneakers are more than
+                    just footwear.
+                </p>
+
+                <p>
+                    We bring together performance, comfort and street
+                    fashion to give our customers access to sneakers
+                    for every lifestyle.
+                </p>
+
+                <ul class="about-list">
+
+                    <li>Quality sneaker collections</li>
+
+                    <li>Affordable prices</li>
+
+                    <li>Latest sneaker releases</li>
+
+                    <li>Convenient online shopping</li>
+
+                    <li>Customer-focused service</li>
+
+                </ul>
+
+                <a href="#shop" class="btn">
+                    Explore Collection
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================
+         NEW RELEASES
+    =========================== -->
+
+    <section class="release-section" id="releases">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Latest Release</h2>
+
+                <p>
+                    Get your hands on the newest styles.
+                </p>
+
+            </div>
+
+
+            <div class="release-content">
+
+                <div class="release-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=1000&q=80"
+                        alt="Latest sneaker release"
+                    >
+
+                </div>
+
+
+                <div class="release-text">
+
+                    <h2>
+                        The Street X1
+                    </h2>
+
+                    <p>
+                        Designed for people who want to stand out.
+                        The Street X1 combines a modern streetwear
+                        design with everyday comfort.
+                    </p>
+
+                    <p>
+                        Available in limited quantities.
+                    </p>
+
+                    <a href="#shop" class="btn">
+                        Shop New Releases
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================
+         TESTIMONIALS
+    =========================== -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>What Our Customers Say</h2>
+
+                <p>
+                    Hear from members of the Sneaker Factory community.
+                </p>
+
+            </div>
+
+
+            <div class="testimonial-grid">
+
+
+                <div class="testimonial">
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <p>
+                        "The website made it really easy to find my
+                        size and order my favourite sneakers."
+                    </p>
+
+                    <h4>
+                        — Thabo M.
+                    </h4>
+
+                </div>
+
+
+                <div class="testimonial">
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <p>
+                        "Great prices and an amazing selection of
+                        sneakers. I will definitely shop here again."
+                    </p>
+
+                    <h4>
+                        — Lerato K.
+                    </h4>
+
+                </div>
+
+
+                <div class="testimonial">
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <p>
+                        "I love the new releases section. It helps me
+                        keep up with the latest sneaker styles."
+                    </p>
+
+                    <h4>
+                        — Sipho N.
+                    </h4>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================
+         CONTACT
+    =========================== -->
+
+    <section class="contact" id="contact">
+
+        <div class="container contact-content">
+
+
+            <div class="contact-info">
+
+                <h2>
+                    Get In Touch
+                </h2>
+
+                <p>
+                    Have a question about a sneaker, size or order?
+                    Contact the Sneaker Factory team.
+                </p>
+
+                <br>
+
+                <p>
+                    📍 25 Main Street, Johannesburg
+                </p>
+
+                <p>
+                    📞 011 123 4567
+                </p>
+
+                <p>
+                    📧 info@sneakerfactory.co.za
+                </p>
+
+                <p>
+                    🕒 Monday - Saturday: 09:00 - 18:00
+                </p>
+
+            </div>
+
+
+            <div class="contact-form">
+
+                <form id="contactForm">
+
+                    <div class="form-group">
+
+                        <label>
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Subject
+                        </label>
+
+                        <select>
+
+                            <option>
+                                General Enquiry
+                            </option>
+
+                            <option>
+                                Product Enquiry
+                            </option>
+
+                            <option>
+                                Order Enquiry
+                            </option>
+
+                            <option>
+                                Returns
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Message
+                        </label>
+
+                        <textarea
+                            placeholder="Write your message..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="btn"
+                    >
+                        Send Message
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================
+         SHOPPING CART
+    =========================== -->
+
+    <div
+        class="cart-panel"
+        id="cartPanel"
+    >
+
+        <div class="cart-header">
+
+            <h2>
+                Your Cart
+            </h2>
+
+            <button
+                class="close-cart"
+                onclick="closeCart()"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div id="cartItems">
+
+            <p>
+                Your cart is empty.
+            </p>
+
+        </div>
+
+
+        <div class="cart-total">
+
+            Total:
+            R<span id="cart-total">0</span>
+
+        </div>
+
+
+        <button
+            class="btn"
+            onclick="checkout()"
+            style="width:100%;"
+        >
+            Checkout
+        </button>
+
+    </div>
+
+
+    <!-- ==========================
+         FOOTER
+    =========================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+
+                <div>
+
+                    <h3>
+                        SNEAKER FACTORY
+                    </h3>
+
+                    <p>
+                        Step into your style with the latest sneakers
+                        and streetwear.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Quick Links
+                    </h3>
+
+                    <p>
+                        <a href="#home">Home</a>
+                    </p>
+
+                    <p>
+                        <a href="#shop">Shop</a>
+                    </p>
+
+                    <p>
+                        <a href="#about">About</a>
+                    </p>
+
+                    <p>
+                        <a href="#contact">Contact</a>
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Follow Us
+                    </h3>
+
+                    <div class="social-links">
+
+                        <a href="#">
+                            Facebook
+                        </a>
+
+                        <a href="#">
+                            Instagram
+                        </a>
+
+                        <a href="#">
+                            TikTok
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="copyright">
+
+                <p>
+                    &copy; 2026 Sneaker Factory.
+                    All Rights Reserved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ==========================
+         SIGN IN / REGISTER MODAL (mock, front-end only)
+    =========================== -->
+
+    <div class="modal-overlay" id="loginOverlay">
+
+        <div class="login-modal">
+
+            <button class="close-modal" onclick="closeLoginModal()">
+                ×
+            </button>
+
+            <div class="auth-tabs">
+
+                <button type="button" class="auth-tab active" id="signInTab" onclick="switchAuthTab('signin')">
+                    Sign In
+                </button>
+
+                <button type="button" class="auth-tab" id="registerTab" onclick="switchAuthTab('register')">
+                    Register
+                </button>
+
+            </div>
+
+            <p class="login-subtext">
+                Sign in or create an account to add items to your cart
+                and save your wishlist.
+            </p>
+
+            <p class="auth-error" id="authError"></p>
+
+
+            <!-- SIGN IN FORM -->
+
+            <form id="signInForm">
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="signInEmail" placeholder="you@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="signInPassword" placeholder="Your password" required>
+                </div>
+
+                <button type="submit" class="btn" style="width:100%;">
+                    Sign In
+                </button>
+
+            </form>
+
+
+            <!-- REGISTER FORM -->
+
+            <form id="registerForm" class="hidden-form">
+
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" id="registerName" placeholder="Your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="registerEmail" placeholder="you@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="registerPassword" placeholder="Create a password" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" id="registerConfirm" placeholder="Confirm password" required>
+                </div>
+
+                <button type="submit" class="btn" style="width:100%;">
+                    Create Account
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================
+         PROFILE MODAL
+    =========================== -->
+
+    <div class="modal-overlay" id="profileOverlay">
+
+        <div class="login-modal">
+
+            <button class="close-modal" onclick="closeProfileModal()">
+                ×
+            </button>
+
+            <h2>My Profile</h2>
+
+            <p class="login-subtext">
+                Update your account details below.
+            </p>
+
+            <p class="auth-error" id="profileMessage"></p>
+
+            <form id="profileForm">
+
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" id="profileName" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="profileEmail" required>
+                </div>
+
+                <button type="submit" class="btn" style="width:100%;">
+                    Save Changes
+                </button>
+
+            </form>
+
+            <button class="logout-btn" onclick="logoutUser()">
+                Log Out
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================
+         WISHLIST PANEL
+    =========================== -->
+
+    <div class="cart-panel" id="wishlistPanel">
+
+        <div class="cart-header">
+
+            <h2>Your Wishlist</h2>
+
+            <button class="close-cart" onclick="closeWishlistPanel()">
+                ×
+            </button>
+
+        </div>
+
+        <div id="wishlistItems">
+
+            <p>Your wishlist is empty.</p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================
+         BACK TO TOP
+    =========================== -->
+
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">
+        Top
+    </button>
+
+
+    <!-- ==========================
+         JAVASCRIPT
+    =========================== -->
+
+    <script>
+
+        /* =========================
+           DARK MODE
+        ========================== */
+
+        function toggleDarkMode() {
+
+            const isDark = document.body.classList.toggle("dark-mode");
+
+            document.getElementById("themeLabel").textContent =
+                isDark ? "Light" : "Dark";
+
+            localStorage.setItem(
+                "sneakerFactoryTheme",
+                isDark ? "dark" : "light"
+            );
+
+        }
+
+        if (localStorage.getItem("sneakerFactoryTheme") === "dark") {
+            document.body.classList.add("dark-mode");
+        }
+
+
+        /* =========================
+           LOGIN / REGISTER / PROFILE
+           (demo, front-end only — accounts are
+            stored in this browser's localStorage,
+            not on a real server)
+        ========================== */
+
+        let users =
+            JSON.parse(localStorage.getItem("sneakerFactoryUsers")) || [];
+
+        let currentUser =
+            JSON.parse(localStorage.getItem("sneakerFactoryUser")) || null;
+
+        let pendingCartItem = null;
+
+
+        function saveUsers() {
+            localStorage.setItem("sneakerFactoryUsers", JSON.stringify(users));
+        }
+
+        function saveCurrentUser() {
+            localStorage.setItem("sneakerFactoryUser", JSON.stringify(currentUser));
+        }
+
+        function updateAccountUI() {
+
+            document.getElementById("accountLabel").textContent =
+                currentUser ? currentUser.name : "Login";
+
+        }
+
+
+        function openLoginModal() {
+            document.getElementById("authError").textContent = "";
+            document.getElementById("loginOverlay").classList.add("open");
+        }
+
+        function closeLoginModal() {
+            document.getElementById("loginOverlay").classList.remove("open");
+            document.getElementById("authError").textContent = "";
+            pendingCartItem = null;
+        }
+
+
+        function switchAuthTab(tab) {
+
+            const signInForm = document.getElementById("signInForm");
+            const registerForm = document.getElementById("registerForm");
+            const signInTab = document.getElementById("signInTab");
+            const registerTab = document.getElementById("registerTab");
+
+            document.getElementById("authError").textContent = "";
+
+            if (tab === "signin") {
+                signInForm.classList.remove("hidden-form");
+                registerForm.classList.add("hidden-form");
+                signInTab.classList.add("active");
+                registerTab.classList.remove("active");
+            } else {
+                registerForm.classList.remove("hidden-form");
+                signInForm.classList.add("hidden-form");
+                registerTab.classList.add("active");
+                signInTab.classList.remove("active");
+            }
+
+        }
+
+
+        function handleAccountClick() {
+
+            if (currentUser) {
+                openProfileModal();
+            } else {
+                switchAuthTab("signin");
+                openLoginModal();
+            }
+
+        }
+
+
+        function completeLogin() {
+
+            updateAccountUI();
+            closeLoginModal();
+
+            if (pendingCartItem) {
+                addToCart(
+                    pendingCartItem.name,
+                    pendingCartItem.price,
+                    pendingCartItem.size,
+                    pendingCartItem.color
+                );
+                pendingCartItem = null;
+            }
+
+        }
+
+
+        document
+            .getElementById("signInForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                const email = document.getElementById("signInEmail").value.trim().toLowerCase();
+                const password = document.getElementById("signInPassword").value;
+
+                const match = users.find(
+                    u => u.email.toLowerCase() === email && u.password === password
+                );
+
+                if (!match) {
+                    document.getElementById("authError").textContent =
+                        "Incorrect email or password.";
+                    return;
+                }
+
+                currentUser = { name: match.name, email: match.email };
+                saveCurrentUser();
+                this.reset();
+                completeLogin();
+
+            });
+
+
+        document
+            .getElementById("registerForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                const name = document.getElementById("registerName").value.trim();
+                const email = document.getElementById("registerEmail").value.trim().toLowerCase();
+                const password = document.getElementById("registerPassword").value;
+                const confirm = document.getElementById("registerConfirm").value;
+
+                if (password !== confirm) {
+                    document.getElementById("authError").textContent =
+                        "Passwords do not match.";
+                    return;
+                }
+
+                if (users.some(u => u.email.toLowerCase() === email)) {
+                    document.getElementById("authError").textContent =
+                        "An account with this email already exists.";
+                    return;
+                }
+
+                const newUser = { name: name, email: email, password: password };
+                users.push(newUser);
+                saveUsers();
+
+                currentUser = { name: newUser.name, email: newUser.email };
+                saveCurrentUser();
+                this.reset();
+                completeLogin();
+
+            });
+
+
+        /* =========================
+           PROFILE
+        ========================== */
+
+        function openProfileModal() {
+
+            document.getElementById("profileMessage").textContent = "";
+            document.getElementById("profileName").value = currentUser.name;
+            document.getElementById("profileEmail").value = currentUser.email;
+            document.getElementById("profileOverlay").classList.add("open");
+
+        }
+
+        function closeProfileModal() {
+            document.getElementById("profileOverlay").classList.remove("open");
+        }
+
+
+        document
+            .getElementById("profileForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                const newName = document.getElementById("profileName").value.trim();
+                const newEmail = document.getElementById("profileEmail").value.trim().toLowerCase();
+
+                const emailTaken = users.some(
+                    u => u.email.toLowerCase() === newEmail && u.email.toLowerCase() !== currentUser.email.toLowerCase()
+                );
+
+                if (emailTaken) {
+                    document.getElementById("profileMessage").textContent =
+                        "That email is already in use by another account.";
+                    return;
+                }
+
+                const record = users.find(
+                    u => u.email.toLowerCase() === currentUser.email.toLowerCase()
+                );
+
+                if (record) {
+                    record.name = newName;
+                    record.email = newEmail;
+                    saveUsers();
+                }
+
+                currentUser = { name: newName, email: newEmail };
+                saveCurrentUser();
+                updateAccountUI();
+
+                document.getElementById("profileMessage").textContent =
+                    "Profile updated.";
+
+            });
+
+
+        function logoutUser() {
+
+            currentUser = null;
+            localStorage.removeItem("sneakerFactoryUser");
+            updateAccountUI();
+            closeProfileModal();
+
+        }
+
+
+        /* =========================
+           WISHLIST
+        ========================== */
+
+        let wishlist = [];
+
+
+        /* =========================
+           PRODUCT OPTIONS (SIZE / COLOUR)
+        ========================== */
+
+        function selectColor(swatch) {
+
+            const group = swatch.closest(".color-swatches");
+
+            group.querySelectorAll(".color-swatch").forEach(s => {
+                s.classList.remove("selected");
+            });
+
+            swatch.classList.add("selected");
+
+        }
+
+
+        function addToCartFromCard(button) {
+
+            const card = button.closest(".product-card");
+
+            const name = card.dataset.name;
+
+            const price = parseInt(
+                card.querySelector(".price").textContent.replace(/\D/g, ""),
+                10
+            );
+
+            const size = card.querySelector(".size-select").value;
+
+            const selectedSwatch = card.querySelector(".color-swatch.selected");
+            const color = selectedSwatch ? selectedSwatch.dataset.color : "Black";
+
+            addToCart(name, price, size, color);
+
+        }
+
+
+        function toggleWishlist(button) {
+
+            const card = button.closest(".product-card");
+            const name = card.dataset.name;
+
+            const price = parseInt(
+                card.querySelector(".price").textContent.replace(/\D/g, ""),
+                10
+            );
+
+            const index = wishlist.findIndex(item => item.name === name);
+
+            if (index > -1) {
+                wishlist.splice(index, 1);
+                button.classList.remove("active");
+            } else {
+                wishlist.push({ name: name, price: price });
+                button.classList.add("active");
+            }
+
+            updateWishlistUI();
+
+        }
+
+
+        function updateWishlistUI() {
+
+            document.getElementById("wishlist-count").textContent =
+                wishlist.length;
+
+            const wishlistItems = document.getElementById("wishlistItems");
+
+            if (wishlist.length === 0) {
+                wishlistItems.innerHTML = "<p>Your wishlist is empty.</p>";
+                return;
+            }
+
+            wishlistItems.innerHTML = "";
+
+            wishlist.forEach((item, index) => {
+
+                const div = document.createElement("div");
+                div.classList.add("cart-item");
+
+                div.innerHTML = `
+                    <div>
+                        <h4>${item.name}</h4>
+                        <p>R${item.price.toLocaleString()}</p>
+                    </div>
+                    <button class="remove-item" onclick="removeFromWishlist(${index})">
+                        Remove
+                    </button>
+                `;
+
+                wishlistItems.appendChild(div);
+
+            });
+
+        }
+
+
+        function removeFromWishlist(index) {
+
+            const name = wishlist[index].name;
+            wishlist.splice(index, 1);
+            updateWishlistUI();
+
+            document.querySelectorAll(".product-card").forEach(card => {
+                if (card.dataset.name === name) {
+                    card.querySelector(".wishlist-btn").classList.remove("active");
+                }
+            });
+
+        }
+
+
+        function openWishlistPanel() {
+            document.getElementById("wishlistPanel").classList.add("open");
+        }
+
+        function closeWishlistPanel() {
+            document.getElementById("wishlistPanel").classList.remove("open");
+        }
+
+
+        /* =========================
+           BACK TO TOP
+        ========================== */
+
+        window.addEventListener("scroll", () => {
+
+            const backToTop = document.getElementById("backToTop");
+
+            if (window.scrollY > 400) {
+                backToTop.classList.add("show");
+            } else {
+                backToTop.classList.remove("show");
+            }
+
+        });
+
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+
+        /* =========================
+           SHOPPING CART
+        ========================== */
+
+        let cart = [];
+
+
+        function addToCart(name, price, size, color) {
+
+            if (!currentUser) {
+                pendingCartItem = { name: name, price: price, size: size, color: color };
+                switchAuthTab("signin");
+                openLoginModal();
+                return;
+            }
+
+            cart.push({
+                name: name,
+                price: price,
+                size: size || "-",
+                color: color || "-"
+            });
+
+            updateCart();
+
+            alert(
+                name + " (UK " + size + ", " + color + ") " +
+                "has been added to your cart!"
+            );
+
+        }
+
+
+        function updateCart() {
+
+            const cartItems =
+                document.getElementById("cartItems");
+
+            const cartCount =
+                document.getElementById("cart-count");
+
+            const cartTotal =
+                document.getElementById("cart-total");
+
+
+            cartCount.textContent = cart.length;
+
+
+            if (cart.length === 0) {
+
+                cartItems.innerHTML =
+                    "<p>Your cart is empty.</p>";
+
+                cartTotal.textContent = "0";
+
+                return;
+            }
+
+
+            cartItems.innerHTML = "";
+
+
+            let total = 0;
+
+
+            cart.forEach((item, index) => {
+
+                total += item.price;
+
+
+                const cartItem =
+                    document.createElement("div");
+
+                cartItem.classList.add("cart-item");
+
+
+                cartItem.innerHTML = `
+
+                    <div>
+
+                        <h4>
+                            ${item.name}
+                        </h4>
+
+                        <p class="cart-item-variant">
+                            UK ${item.size} &middot; ${item.color}
+                        </p>
+
+                        <p>
+                            R${item.price.toLocaleString()}
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="remove-item"
+                        onclick="removeFromCart(${index})"
+                    >
+                        Remove
+                    </button>
+
+                `;
+
+
+                cartItems.appendChild(cartItem);
+
+            });
+
+
+            cartTotal.textContent =
+                total.toLocaleString();
+
+        }
+
+
+        function removeFromCart(index) {
+
+            cart.splice(index, 1);
+
+            updateCart();
+
+        }
+
+
+        function openCart() {
+
+            document
+                .getElementById("cartPanel")
+                .classList.add("open");
+
+        }
+
+
+        function closeCart() {
+
+            document
+                .getElementById("cartPanel")
+                .classList.remove("open");
+
+        }
+
+
+        function checkout() {
+
+            if (cart.length === 0) {
+
+                alert("Your cart is empty.");
+
+                return;
+            }
+
+
+            alert(
+                "Thank you for shopping with Sneaker Factory! " +
+                "Checkout functionality can be connected to a payment system."
+            );
+
+        }
+
+
+        /* =========================
+           PRODUCT FILTER
+        ========================== */
+
+        function filterProducts(category, button) {
+
+            const products =
+                document.querySelectorAll(".product-card");
+
+
+            const buttons =
+                document.querySelectorAll(".filter-btn");
+
+
+            buttons.forEach(btn => {
+
+                btn.classList.remove("active");
+
+            });
+
+
+            button.classList.add("active");
+
+
+            products.forEach(product => {
+
+                if (
+                    category === "all" ||
+                    product.dataset.category === category
+                ) {
+
+                    product.style.display = "block";
+
+                } else {
+
+                    product.style.display = "none";
+
+                }
+
+            });
+
+        }
+
+
+        /* =========================
+           PRODUCT SEARCH
+        ========================== */
+
+        function searchProducts() {
+
+            const search =
+                document
+                .getElementById("searchInput")
+                .value
+                .toLowerCase();
+
+
+            const products =
+                document.querySelectorAll(".product-card");
+
+
+            products.forEach(product => {
+
+                const name =
+                    product.dataset.name.toLowerCase();
+
+
+                if (name.includes(search)) {
+
+                    product.style.display = "block";
+
+                } else {
+
+                    product.style.display = "none";
+
+                }
+
+            });
+
+        }
+
+
+        /* =========================
+           CONTACT FORM
+        ========================== */
+
+        document
+            .getElementById("contactForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                alert(
+                    "Thank you for contacting Sneaker Factory. " +
+                    "We will get back to you shortly."
+                );
+
+                this.reset();
+
+            });
+
+
+        /* =========================
+           INITIAL PAGE STATE
+        ========================== */
+
+        window.addEventListener("DOMContentLoaded", () => {
+
+            updateAccountUI();
+
+            if (document.body.classList.contains("dark-mode")) {
+                document.getElementById("themeLabel").textContent = "Light";
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
